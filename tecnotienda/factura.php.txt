@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Factura</title>
+  <style>
+    body { background: #000; color: #fff; font-family: Arial; padding: 40px; }
+    .factura { background: #111; padding: 30px; border-radius: 10px; max-width: 600px; margin: auto; color: #00ffcc; }
+    h1 { color: #00bfff; }
+    .linea { margin: 10px 0; }
+  </style>
+</head>
+<body>
+
+<div class="factura">
+  <h1>Factura del Pedido</h1>
+
+  <div class="linea"><strong>Cliente:</strong> <?php echo htmlspecialchars($_GET['nombre']); ?></div>
+  <div class="linea"><strong>Dirección:</strong> <?php echo htmlspecialchars($_GET['direccion']); ?></div>
+  <div class="linea"><strong>Teléfono:</strong> <?php echo htmlspecialchars($_GET['telefono']); ?></div>
+  <div class="linea"><strong>Correo:</strong> <?php echo htmlspecialchars($_GET['correo']); ?></div>
+  <div class="linea"><strong>Producto:</strong> <?php echo htmlspecialchars($_GET['producto']); ?></div>
+  <div class="linea"><strong>Precio:</strong> $<?php echo htmlspecialchars($_GET['precio']); ?></div>
+  <div class="linea"><strong>Método de pago:</strong> <?php echo htmlspecialchars($_GET['metodo']); ?></div>
+  <div class="linea"><strong>Tarjeta:</strong> **** **** **** <?php echo substr($_GET['tarjeta'], -4); ?></div>
+  <div class="linea"><strong>Fecha:</strong> <?php echo date('d/m/Y H:i'); ?></div>
+
+</div>
+
+</body>
+</html>

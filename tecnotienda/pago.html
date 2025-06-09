@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Haz tu Pedido</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    .container {
+      background-color: #2e2e2e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      width: 90%;
+      max-width: 400px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      margin-top: 10px;
+      display: block;
+    }
+    input, select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border: none;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    button {
+      margin-top: 20px;
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      border-radius: 5px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Haz tu Pedido</h1>
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" required>
+    <label for="direccion">Dirección:</label>
+    <input type="text" id="direccion" required>
+    <label for="producto">Producto:</label>
+    <input type="text" id="producto" required>
+    <label for="precio">Precio:</label>
+    <input type="text" id="precio" required>
+    <label for="metodoPago">Método de pago:</label>
+    <select id="metodoPago" required>
+      <option value="">Selecciona</option>
+      <option value="Tarjeta">Tarjeta</option>
+      <option value="Efectivo">Efectivo</option>
+    </select>
+    <label for="tarjeta">Número de tarjeta (si aplica):</label>
+    <input type="text" id="tarjeta">
+    <button id="btnEnviar">Enviar Pedido</button>
+  </div>
+
+  <!-- NOTA: Script después de todo el contenido -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.getElementById('btnEnviar').addEventListener('click', function() {
+        const nombre = document.getElementById('nombre').value;
+        const direccion = document.getElementById('direccion').value;
+        const producto = document.getElementById('producto').value;
+        const precio = document.getElementById('precio').value;
+        const metodoPago = document.getElementById('metodoPago').value;
+        const tarjeta = document.getElementById('tarjeta').value;
+
+        if (!nombre || !direccion || !producto || !precio || !metodoPago) {
+          alert("Por favor completa todos los campos obligatorios.");
+          return;
+        }
+
+        const url = factura.html?nombre=${encodeURIComponent(nombre)}&direccion=${encodeURIComponent(direccion)}&producto=${encodeURIComponent(producto)}&precio=${encodeURIComponent(precio)}&metodoPago=${encodeURIComponent(metodoPago)}&tarjeta=${encodeURIComponent(tarjeta)};
+        window.location.href = url;
+      });
+    });
+  </script>
+</body>
+</html>

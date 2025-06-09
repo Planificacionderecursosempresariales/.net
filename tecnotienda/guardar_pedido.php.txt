@@ -1,0 +1,27 @@
+<?php
+$conn = new mysqli("localhost", "root", "", "erp");
+if ($conn->connect_error) {
+  die("Error: " . $conn->connect_error);
+}
+
+$nombre = $_POST['nombre'];
+$direccion = $_POST['direccion'];
+$telefono = $_POST['telefono'];
+$correo = $_POST['correo'];
+$producto = $_POST['producto'];
+$precio = $_POST['precio'];
+$metodo = $_POST['metodo_pago'];
+$tarjeta = $_POST['tarjeta'];
+
+$sql = "INSERT INTO pedidos (nombre, direccion, telefono, correo, producto, metodo_pago, tarjeta)
+        VALUES ('$nombre', '$direccion', '$telefono', '$correo', '$producto', '$metodo', '$tarjeta')";
+
+if ($conn->query($sql) === TRUE) {
+  header("Location: factura.php?nombre=$nombre&direccion=$direccion&telefono=$telefono&correo=$correo&producto=$producto&precio=$precio&metodo=$metodo&tarjeta=$tarjeta");
+  exit();
+} else {
+  echo "Error al guardar pedido: " . $conn->error;
+}
+
+$conn->close();
+?>

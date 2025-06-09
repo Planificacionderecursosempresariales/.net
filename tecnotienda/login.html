@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión - Tecnotienda</title>
+  <style>
+    body {
+      background-color: #000000;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .formulario {
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px #00ccff;
+      width: 300px;
+    }
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+      background-color: #333;
+      color: white;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #00bfff;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #008fcc;
+    }
+    h2 {
+      text-align: center;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="formulario">
+    <h2>Iniciar Sesión</h2>
+    <form action="index.html" method="post">
+      <input type="text" name="usuario" placeholder="Usuario o correo" required>
+      <input type="password" name="clave" placeholder="Contraseña" required>
+      <button type="submit">Entrar</button>
+    </form>
+  </div>
+ <meta http-equiv="refresh" content="3;url=index.html"> <!-- Redirige en 3 segundos -->
+<form action="index.html" method="post">
+</body>
+</html>

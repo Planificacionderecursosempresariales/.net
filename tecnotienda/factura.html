@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Factura</title>
+  <style>
+    body {
+      background-color: #1e1e1e;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .factura {
+      background-color: #2e2e2e;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    p {
+      margin: 5px 0;
+      font-size: 16px;
+    }
+
+    .label {
+      font-weight: bold;
+      color: #4CAF50;
+    }
+  </style>
+</head>
+<body>
+  <div class="factura">
+    <h1>Factura</h1>
+    <p><span class="label">Nombre:</span> <span id="nombre"></span></p>
+    <p><span class="label">Dirección:</span> <span id="direccion"></span></p>
+    <p><span class="label">Producto:</span> <span id="producto"></span></p>
+    <p><span class="label">Precio:</span> $<span id="precio"></span></p>
+    <p><span class="label">Método de pago:</span> <span id="metodoPago"></span></p>
+    <p><span class="label">Número de tarjeta:</span> <span id="tarjeta"></span></p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    document.getElementById('nombre').textContent = params.get('nombre') || '-';
+    document.getElementById('direccion').textContent = params.get('direccion') || '-';
+    document.getElementById('producto').textContent = params.get('producto') || '-';
+    document.getElementById('precio').textContent = params.get('precio') || '-';
+    document.getElementById('metodoPago').textContent = params.get('metodoPago') || '-';
+    document.getElementById('tarjeta').textContent = params.get('tarjeta') || '-';
+  </script>
+</body>
+</html>
